@@ -11,8 +11,8 @@ app.get('/', async (req, res) => {
     res.render('index', {products})
 })
 
-app.get('/login', auth, (req, res) => {
-    res.render('login') 
+app.get('/signIn-Up', auth, (req, res) => {
+    res.render('signIn-Up')
 })
 
 app.get('/404', (req, res) => {
