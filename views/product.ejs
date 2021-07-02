@@ -13,9 +13,6 @@
  		<!-- Bootstrap -->
  		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
- 		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
 
  		<!-- Font Awesome Icon -->
  		<link rel="stylesheet" href="css/font-awesome.min.css">
@@ -73,15 +70,6 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-								<!-- Favoris -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Favoris</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Favoris -->
 
 								<!-- Cart -->
 								<div class="dropdown">
@@ -97,8 +85,8 @@
 													<img src="./img/product01.png" alt="">
 												</div>
 												<div class="product-body">
-													<h3 class="product-name"><a href="#">Le Nom de Produit ici</a></h3>
-													<h4 class="product-price"><span class="qty">1x</span>DZD980.00</h4>
+													<h3 class="product-name"><a href="#"><%= product.title %> </a></h3>
+													<h4 class="product-price"><input type="number" class="qty" value='<%= product.stockQuantity %> ' />DZD<%= product.price %> </h4>
 												</div>
 												<button class="delete"><i class="fa fa-close"></i></button>
 											</div>
@@ -119,8 +107,7 @@
 											<h5>SUBTOTAL: DZD2940.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Voir le panier</a>
-											<a href="#">Vérification  <i class="fa fa-arrow-circle-right"></i></a>
+											<a href="#">Vérification<i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
 								</div>
@@ -174,64 +161,22 @@
 			<div class="container">
 				<!-- row -->
 				<div class="row">
+					
 					<!-- Product main img -->
-					<div class="col-md-5 col-md-push-2">
+					<div class="col-md-4">
 						<div id="product-main-img">
 							<div class="product-preview">
 								<img src="./img/product01.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product03.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product06.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product08.png" alt="">
 							</div>
 						</div>
 					</div>
 					<!-- /Product main img -->
 
-					<!-- Product thumb imgs -->
-					<div class="col-md-2  col-md-pull-5">
-						<div id="product-imgs">
-							<div class="product-preview">
-								<img src="./img/product01.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product03.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product06.png" alt="">
-							</div>
-
-							<div class="product-preview">
-								<img src="./img/product08.png" alt="">
-							</div>
-						</div>
-					</div>
-					<!-- /Product thumb imgs -->
-
 					<!-- Product details -->
-					<div class="col-md-5">
+					<div class="col-md-8">
 						<div class="product-details">
 							<h2 class="product-name">Le Nom de Produit ici</h2>
-							<div>
-								<div class="product-rating">
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star"></i>
-									<i class="fa fa-star-o"></i>
-								</div>
-								<a class="review-link" href="#">10 Avis | Ajoutez votre avis</a>
-							</div>
+							<br>
 							<div>
 								<h3 class="product-price">DZD980.00 <del class="product-old-price">DZD990.00</del></h3>
 								<span class="product-available">En stock</span>
@@ -252,10 +197,6 @@
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
 							</div>
 
-							<ul class="product-btns">
-								<li><a href="#"><i class="fa fa-heart-o"></i> Ajouter au Favoris</a></li>
-							</ul>
-
 						</div>
 					</div>
 					<!-- /Product details -->
@@ -266,7 +207,7 @@
 							<!-- product tab nav -->
 							<ul class="tab-nav">
 								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab3">Avis (3)</a></li>
+								<li><a data-toggle="tab" href="#tab3">Commentaires</a></li>
 							</ul>
 							<!-- /product tab nav -->
 
@@ -295,105 +236,14 @@
 								<!-- tab3  -->
 								<div id="tab3" class="tab-pane fade in">
 									<div class="row">
-										<!-- Rating -->
-										<div class="col-md-3">
-											<div id="rating">
-												<div class="rating-avg">
-													<span>4.5</span>
-													<div class="rating-stars">
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star"></i>
-														<i class="fa fa-star-o"></i>
-													</div>
-												</div>
-												<ul class="rating">
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 80%;"></div>
-														</div>
-														<span class="sum">3</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div style="width: 60%;"></div>
-														</div>
-														<span class="sum">2</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-													<li>
-														<div class="rating-stars">
-															<i class="fa fa-star"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-															<i class="fa fa-star-o"></i>
-														</div>
-														<div class="rating-progress">
-															<div></div>
-														</div>
-														<span class="sum">0</span>
-													</li>
-												</ul>
-											</div>
-										</div>
-										<!-- /Rating -->
-
 										<!-- Reviews -->
-										<div class="col-md-6">
+										<div class="col-md-9">
 											<div id="reviews">
 												<ul class="reviews">
 													<li>
 														<div class="review-heading">
 															<h5 class="name">Nom</h5>
 															<p class="date">25 MAY 2021, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
 														</div>
 														<div class="review-body">
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -403,13 +253,6 @@
 														<div class="review-heading">
 															<h5 class="name">Nom</h5>
 															<p class="date">25 MAY 2021, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
 														</div>
 														<div class="review-body">
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -419,13 +262,6 @@
 														<div class="review-heading">
 															<h5 class="name">Nom</h5>
 															<p class="date">25 MAY 2021, 8:0 PM</p>
-															<div class="review-rating">
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star"></i>
-																<i class="fa fa-star-o empty"></i>
-															</div>
 														</div>
 														<div class="review-body">
 															<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
@@ -450,16 +286,6 @@
 													<input class="input" type="text" placeholder="Votre Nom">
 													<input class="input" type="email" placeholder="Votre Email">
 													<textarea class="input" placeholder="Votre Avis"></textarea>
-													<div class="input-rating">
-														<span>Votre évaluation: </span>
-														<div class="stars">
-															<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
-															<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
-															<input id="star3" name="rating" value="3" type="radio"><label for="star3"></label>
-															<input id="star2" name="rating" value="2" type="radio"><label for="star2"></label>
-															<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
-														</div>
-													</div>
 													<button class="primary-btn">Submit</button>
 												</form>
 											</div>
@@ -508,10 +334,10 @@
 								<h4 class="product-price">DZD980.00 <del class="product-old-price">DZD990.00</del></h4>
 								<div class="product-rating">
 								</div>
-								<div class="product-btns">
+								<!--<div class="product-btns">
 									<button class="add-to-Favoris"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter au Favoris</span></button>
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
+								</div>-->
 							</div>
 							<div class="add-to-cart">
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au pannier</button>
@@ -539,11 +365,10 @@
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
-								</div>
-								<div class="product-btns">
+								</div><!--<div class="product-btns">
 									<button class="add-to-Favoris"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter au Favoris</span></button>
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
+								</div>-->
 							</div>
 							<div class="add-to-cart">
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au pannier</button>
@@ -570,11 +395,10 @@
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star"></i>
 									<i class="fa fa-star-o"></i>
-								</div>
-								<div class="product-btns">
+								</div><!--<div class="product-btns">
 									<button class="add-to-Favoris"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter au Favoris</span></button>
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
+								</div>-->
 							</div>
 							<div class="add-to-cart">
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>
@@ -594,11 +418,10 @@
 								<h3 class="product-name"><a href="#">Le Nom de Produit ici</a></h3>
 								<h4 class="product-price">DZD980.00 <del class="product-old-price">DZD990.00</del></h4>
 								<div class="product-rating">
-								</div>
-								<div class="product-btns">
+								</div><!--<div class="product-btns">
 									<button class="add-to-Favoris"><i class="fa fa-heart-o"></i><span class="tooltipp">Ajouter au Favoris</span></button>
 									<button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Aperçu</span></button>
-								</div>
+								</div>-->
 							</div>
 							<div class="add-to-cart">
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au pannier</button>
@@ -629,7 +452,6 @@
 		<!-- jQuery Plugins -->
 		<script src="js/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
-		<script src="js/slick.min.js"></script>
 		<script src="js/jquery.zoom.min.js"></script>
 		<script src="js/main.js"></script>
 
