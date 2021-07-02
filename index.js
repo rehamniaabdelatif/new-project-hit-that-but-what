@@ -37,8 +37,8 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 
 // static file 
-app.use('/', express.static('./uploads'))
-app.use('/public',express.static('./public'))
+app.use('/uploads', express.static('./uploads'))
+app.use('/',express.static('./public'))
 
 
 // page ----------------------------------------------
