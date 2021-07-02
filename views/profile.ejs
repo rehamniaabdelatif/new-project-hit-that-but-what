@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		 
+		<title>HaiStore</title>
+
+ 		<!-- Google font -->
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+
+ 		<!-- Bootstrap -->
+ 		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
+
+ 		<!-- Slick -->
+ 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
+ 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
+
+ 		<!-- Font Awesome Icon -->
+ 		<link rel="stylesheet" href="css/font-awesome.min.css">
+		 
+ 		<link type="text/css" rel="stylesheet" href="css/style.css"/>
+
+    </head>
+	<body>
+		<!-- HEADER -->
+		<header>
+			<!-- TOP HEADER -->
+			<div id="top-header">
+				<div class="container">
+					<ul class="header-links pull-left">
+						<li><a href="#"><i class="fa fa-phone"></i> +213-66-66-66</a></li>
+						<li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+						<li><a href="#"><i class="fa fa-map-marker"></i> Skikda, Algérie</a></li>
+					</ul>
+					<ul class="header-links pull-right">
+						<li><a href="#"><i class="fa fa-dollar"></i> DZD</a></li>
+						<li><a href="signIn-Up.html"><i class="fa fa-user-o"></i> Mon Compte</a></li>
+						<li><a href="index.html"><i class="fa fa-home"></i> Accueil</a></li>
+					</ul>
+				</div>
+			</div>
+			<!-- /TOP HEADER -->
+
+			<!-- MAIN HEADER -->
+			<div id="header">
+				<!-- container -->
+				<div class="container">
+					<!-- row -->
+					<div class="row">
+						<!-- LOGO -->
+						<div class="col-md-3">
+							<div class="header-logo">
+								<a href="#" class="logo">
+
+								</a>
+							</div>
+						</div>
+						<!-- /LOGO -->
+
+						<!-- SEARCH BAR -->
+						<div class="col-md-6">
+							<div class="header-search">
+								<form>
+									<input class="input" placeholder="Rechercher ici">
+									<button class="search-btn">Search</button>
+								</form>
+							</div>
+						</div>
+						<!-- /SEARCH BAR -->
+
+						<!-- ACCOUNT -->
+						<div class="col-md-3 clearfix">
+							<div class="header-ctn">
+								<!-- Favoris -->
+								<div>
+									<a href="#">
+										<i class="fa fa-heart-o"></i>
+										<span>Favoris</span>
+										<div class="qty">2</div>
+									</a>
+								</div>
+								<!-- /Favoris -->
+
+								<!-- Cart -->
+								<div class="dropdown">
+									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+										<i class="fa fa-shopping-cart"></i>
+										<span>Panier</span>
+										<div class="qty">3</div>
+									</a>
+									<div class="cart-dropdown">
+										<div class="cart-list">
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product01.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Le nom De produit ici</a></h3>
+													<h4 class="product-price"><span class="qty">1x</span>DZD980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+
+											<div class="product-widget">
+												<div class="product-img">
+													<img src="./img/product02.png" alt="">
+												</div>
+												<div class="product-body">
+													<h3 class="product-name"><a href="#">Le nom De produit ici</a></h3>
+													<h4 class="product-price"><span class="qty">3x</span>DZD980.00</h4>
+												</div>
+												<button class="delete"><i class="fa fa-close"></i></button>
+											</div>
+										</div>
+										<div class="cart-summary">
+											<small>3 Article(s) sélectionné(s)</small>
+											<h5>SUBTOTAL: DZD2940.00</h5>
+										</div>
+										<div class="cart-btns">
+											<a href="#">Voir le panier</a>
+											<a href="#">Vérification  <i class="fa fa-arrow-circle-right"></i></a>
+										</div>
+									</div>
+								</div>
+								<!-- /Cart -->
+
+								<!-- Menu Toogle -->
+								<div class="menu-toggle">
+									<a href="#">
+										<i class="fa fa-bars"></i>
+										<span>Menu</span>
+									</a>
+								</div>
+								<!-- /Menu Toogle -->
+							</div>
+						</div>
+						<!-- /ACCOUNT -->
+					</div>
+					<!-- row -->
+				</div>
+				<!-- container -->
+			</div>
+			<!-- /MAIN HEADER -->
+		</header>
+		<!-- /HEADER -->
+
+		<!-- NAVIGATION -->
+		<nav id="navigation">
+			<!-- container -->
+			<div class="container">
+				<!-- responsive-nav -->
+				<div id="responsive-nav">
+					<!-- NAV -->
+					<ul class="main-nav nav navbar-nav">
+						<li><a href="#">Accueil</a></li>
+						<li><a href="#">Laptops</a></li>
+						<li><a href="#">Smartphones</a></li>
+						<li><a href="#">Cameras</a></li>
+						<li><a href="#">Accessoires</a></li>
+					</ul>
+					<!-- /NAV -->
+				</div>
+				<!-- /responsive-nav -->
+			</div>
+			<!-- /container -->
+		</nav>
+		<!-- /NAVIGATION -->
+
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- profile info Details -->
+					<div class="col-md-4 signup-details">
+						<div class="signup-form">
+							<div class="section-title">
+								<h3 class="title">Mes Information</h3>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="user_name" placeholder="User Name" value="Nom D'utilisateur ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="prenom" placeholder="Prenom" value="Prenom ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="nom" placeholder="Nom" value="Nom ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="email" name="email" placeholder="Email" value="Email ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="adresse" placeholder="Adresse" value="Adresse ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="ville" placeholder="Ville" value="Ville ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="wilaya" placeholder="Wilaya" value="Wilaya ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="text" name="zip-code" placeholder="Zip Code" value="Zip Code ici" disabled>
+							</div>
+							<div class="form-group">
+								<input class="input" type="tel" name="phone" placeholder="Phone" value="Telephone ici" disabled>
+							</div>
+							<button type="button" class="primary-btn signup-submit pull-right" data-toggle="modal" data-target="#myModal">Modifier</button>
+							 
+							<!-- Modal -->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+									<h4 class="modal-title" id="myModalLabel">Mes Information</h4>
+									</div>
+									<div class="modal-body">
+										<div class="form-group">
+											<input class="input" type="text" name="user_name" placeholder="User Name">
+										</div>
+										<div class="form-group">
+											<input class="input" type="text" name="prenom" placeholder="Prenom">
+										</div>
+										<div class="form-group">
+											<input class="input" type="text" name="nom" placeholder="Nom">
+										</div>
+										<div class="form-group">
+											<input class="input" type="email" name="email" placeholder="Email">
+										</div>
+										<div class="form-group">
+											<input class="input" type="text" name="adresse" placeholder="Adresse">
+										</div>
+										<div class="form-group">
+											<input class="input" type="text" name="ville" placeholder="Ville">
+										</div>
+										<div class="form-group">
+											<input class="input" type="text" name="wilaya" placeholder="Wilaya">
+										</div>
+										<div class="form-group">
+											<input class="input" type="number" name="zip-code" placeholder="Zip Code">
+										</div>
+										<div class="form-group">
+											<input class="input" type="tel" name="phone" placeholder="Phone">
+										</div>
+									</div>
+									<div class="modal-footer">
+									<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									<button type="button" class="btn btn-danger">Modifier</button>
+									</div>
+								</div>
+								</div>
+							</div>
+							<!-- /Modal-->
+
+						</div>
+					</div>
+					<!-- /Profile info Details -->
+
+					<!-- Commandes Details-->
+					<div class="col-xs-1"></div>
+					<div class="col-md-7 col-sm-12 signup-details">
+						<div class="signup-form">
+							<div class="section-title">
+								<h3 class="title">Mes commandes</h3>
+							</div>
+							<div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">Nom de produit</th>
+                                            <th class="border-top-0">Catégorie</th>
+                                            <th class="border-top-0">Montant</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td class="txt-oflo">product name here</td>
+                                            <td>categorie name here</td>
+                                            <td>price here</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+						</div>
+					</div>
+					<!-- /Commandes Details-->
+					
+
+				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+
+		<!-- FOOTER -->
+		<footer id="footer">
+			<div class="container">
+				<div class="col-md-12 text-center">
+					<span class="copyright">
+						Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous droits réservés
+					</span>
+				</div>
+			</div>
+		</footer>
+	<!-- /FOOTER -->
+
+		<!-- jQuery Plugins -->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/slick.min.js"></script>
+		<script src="js/jquery.zoom.min.js"></script>
+		<script src="js/main.js"></script>
+
+	</body>
+</html>
