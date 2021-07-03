@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Admin</title>
+
+    <link rel="stylesheet" href="plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
+
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin5" data-sidebartype="full"
+        data-sidebar-position="absolute" data-header-position="absolute" data-boxed-layout="full">
+
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin6">
+                    <!-- Logo -->
+                    <a class="navbar-brand" href="dashboard.html">
+                        <!-- Logo icon -->
+                        <b class="logo-icon">
+                        </b>
+                        <!--End Logo icon -->
+
+                        <!-- Logo text -->
+                        <span class="logo-text">
+                            <!-- dark Logo text -->
+                            <img src="plugins/images/logo-text.png" alt="homepage" />
+                        </span>
+                    </a>
+                    <!-- End Logo -->
+                    
+                    <!-- toggle and nav items -->
+                    <a class="nav-toggler waves-effect waves-light text-dark d-block d-md-none"
+                        href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                </div>
+                <!-- End Logo -->
+
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+                    <ul class="navbar-nav d-none d-md-block d-lg-none">
+                        <li class="nav-item">
+                            <a class="nav-toggler nav-link waves-effect waves-light text-white"
+                                href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto d-flex align-items-center">
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <aside class="left-sidebar" data-sidebarbg="skin6">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav">
+                        <!-- User Profile-->
+                        <li class="sidebar-item pt-2">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="dashboard.html"
+                                aria-expanded="false">
+                                <i class="far fa-clock" aria-hidden="true"></i>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="users.html"
+                                aria-expanded="false">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span class="hide-menu">Utilisateurs</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="products.html"
+                                aria-expanded="false">
+                                <i class="fa fa-box" aria-hidden="true"></i>
+                                <span class="hide-menu">Produits</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="categories.html"
+                                aria-expanded="false">
+                                <i class="fa fa-th-list" aria-hidden="true"></i>
+                                <span class="hide-menu">Categories</span>
+                            </a>
+                        </li>
+                        </li>
+                        <li class="text-center p-20 upgrade-btn">
+                            <a href="../index.html" class="btn d-grid btn-danger text-white">
+                                Déconnexion</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+
+        <div class="page-wrapper">
+            <div class="page-breadcrumb bg-white">
+                <div class="row align-items-center">
+                    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                        <h4 class="page-title">Utilisateurs</h4>
+                    </div>
+                    <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                        <div class="d-md-flex">
+                            <button 
+                                type="button" class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal1">Ajouter Utilisateur</button>
+                    
+                            <!-- Modal1 -->
+                            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Ajouter Utilisateur</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <!-- model body -->
+                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <form class="form-horizontal form-material">
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Nom</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Ville</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group mb-4">
+                                                            <label class="col-md-12 p-0">Password</label>
+                                                            <div class="col-md-12 border-bottom p-0">
+                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-danger">Ajouter</button>
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
+							<!-- /Modal1-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid">
+                <!-- Row -->
+                <div class="row">
+                    <div class="col-md-12 col-lg-12 col-sm-12">
+                        <div class="white-box">
+                            <div class="d-md-flex mb-3">
+                                <h3 class="box-title mb-0">Users</h3>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table no-wrap">
+                                    <thead>
+                                        <tr>
+                                            <th class="border-top-0">#</th>
+                                            <th class="border-top-0">Nom D'utilisateur</th>
+                                            <th class="border-top-0">Nom</th>
+                                            <th class="border-top-0">Prenom</th>
+                                            <th class="border-top-0">Email</th>
+                                            <th class="border-top-0">Adresse</th>
+                                            <th class="border-top-0">Option</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal2">modifier</a>
+                                                            
+                                                            <!-- Modal2 -->
+                                                            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal2-->
+
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal3">modifier</a>
+                                                        
+                                                            <!-- Modal3 -->
+                                                            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal3-->
+                                                            
+                                                            <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>3</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal4">modifier</a>
+                                                        
+                                                            <!-- Modal4 -->
+                                                            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal4-->
+                                                            
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>4</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal5">modifier</a>
+                                                        
+                                                            <!-- Modal5 -->
+                                                            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal5-->
+                                                            
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>5</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal6">modifier</a>
+                                                        
+                                                            <!-- Modal6 -->
+                                                            <div class="modal fade" id="exampleModal6" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal6-->
+                                                            
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>6</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal7">modifier</a>
+                                                        
+                                                            <!-- Modal7 -->
+                                                            <div class="modal fade" id="exampleModal7" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal7-->
+                                                            
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-toggle="modal" data-target="#myModal">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>7</td>
+                                            <td class="txt-oflo">user-name here</td>
+                                            <td>last name here</td>
+                                            <td>first name here</td>
+                                            <td>email here</td>
+                                            <td>adresse here</td>
+                                            <td>
+                                                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+                                                    <div class="d-md-flex">
+                                                        <a href="#" 
+                                                            class="btn btn-info d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-bs-toggle="modal" data-bs-target="#exampleModal8">modifier</a>
+                                                        
+                                                            <!-- Modal8 -->
+                                                            <div class="modal fade" id="exampleModal8" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                    <h5 class="modal-title" id="exampleModalLabel">Modifier</h5>
+                                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div class="col-lg-12 col-xlg-12 col-md-12">
+                                                                            <div class="card">
+                                                                                <div class="card-body">
+                                                                                    <form class="form-horizontal form-material">
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom D'utilisateur</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom d'utilisateur" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Prenom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="prenom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Nom</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="nom" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label for="example-email" class="col-md-12 p-0">Email</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="email" placeholder="email ici" class="form-control p-0 border-0" name="example-email" id="example-email">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Adresse</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="adresse" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Ville</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="ville" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Wilaya</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="wilaya" class="form-control p-0 border-0"> 
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Zip Code</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="21002" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Telephone</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="text" placeholder="06 66 66 66 16" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="form-group mb-4">
+                                                                                            <label class="col-md-12 p-0">Password</label>
+                                                                                            <div class="col-md-12 border-bottom p-0">
+                                                                                                <input type="password" value="password" class="form-control p-0 border-0">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </form>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                                                                    <button type="button" class="btn btn-danger">Modifier</button>
+                                                                    </div>
+                                                                </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- /Modal8-->
+                                                            
+                                                        <a href="#" 
+                                                            class="btn btn-danger d-none d-md-block pull-right ms-auto hidden-xs hidden-sm waves-effect waves-light text-white" data-toggle="modal" data-target="#myModal">supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Row -->
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="plugins/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app-style-switcher.js"></script>
+    <!--Menu sidebar -->
+    <script src="js/sidebarmenu.js"></script>
+    <!--Custom JavaScript -->
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

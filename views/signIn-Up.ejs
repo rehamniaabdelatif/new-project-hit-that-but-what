@@ -13,10 +13,6 @@
  		<!-- Bootstrap -->
  		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css"/>
 
- 		<!-- Slick -->
- 		<link type="text/css" rel="stylesheet" href="css/slick.css"/>
- 		<link type="text/css" rel="stylesheet" href="css/slick-theme.css"/>
-
  		<!-- Font Awesome Icon -->
  		<link rel="stylesheet" href="css/font-awesome.min.css">
 
@@ -73,16 +69,6 @@
 						<!-- ACCOUNT -->
 						<div class="col-md-3 clearfix">
 							<div class="header-ctn">
-								<!-- Favoris -->
-								<div>
-									<a href="#">
-										<i class="fa fa-heart-o"></i>
-										<span>Favoris</span>
-										<div class="qty">2</div>
-									</a>
-								</div>
-								<!-- /Favoris -->
-
 								<!-- Cart -->
 								<div class="dropdown">
 									<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
@@ -119,7 +105,6 @@
 											<h5>SUBTOTAL: DZD2940.00</h5>
 										</div>
 										<div class="cart-btns">
-											<a href="#">Voir le panier</a>
 											<a href="#">Vérification  <i class="fa fa-arrow-circle-right"></i></a>
 										</div>
 									</div>
@@ -211,7 +196,7 @@
 
 					<!-- SignIn Details -->
 					<div class="col-md-5 order-details">
-						<div class="signin-form">
+						<form action="/api/auth/login" method="POST" class="signin-form">
 							<div class="section-title">
 								<h3 class="title">connexion</h3>
 							</div>
@@ -221,8 +206,8 @@
 							<div class="form-group">
 								<input class="input" type="password" name="password" placeholder="Mot De Passe">
 							</div>
-							<button type="button" class="primary-btn order-submit">connexion</button>
-						</div>
+							<button type="submit" class="primary-btn order-submit">connexion</button>
+						</form>
 					</div>
 					<!-- /SignIn Details -->
 				</div>

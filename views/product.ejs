@@ -166,7 +166,7 @@
 					<div class="col-md-4">
 						<div id="product-main-img">
 							<div class="product-preview">
-								<img src="./img/product01.png" alt="">
+								<img src="/uploads/<%= product.photo %> " alt="">
 							</div>
 						</div>
 					</div>
@@ -175,13 +175,13 @@
 					<!-- Product details -->
 					<div class="col-md-8">
 						<div class="product-details">
-							<h2 class="product-name">Le Nom de Produit ici</h2>
+							<h2 class="product-name"><%= product.title %> </h2>
 							<br>
 							<div>
-								<h3 class="product-price">DZD980.00 <del class="product-old-price">DZD990.00</del></h3>
+								<h3 class="product-price">DZD<%= product.price %>  <del class="product-old-price">DZD<%= product.oldPrice %> </del></h3>
 								<span class="product-available">En stock</span>
 							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+							<p><%= product.description %> </p>
 
 							<br>
 
@@ -189,9 +189,21 @@
 								<div class="qty-label">
 									Qty
 									<div class="input-number">
-										<input type="number" value="0">
-										<span class="qty-up">+</span>
-										<span class="qty-down">-</span>
+										<input type="number" value="0" id="numberQty">
+										<span class="qty-up" id="qty-up" onclick="onclickUp()">+</span>
+										<span class="qty-down" id="qty-down" onclick="onclickDown()">-</span>
+										<script>
+											let qtyUp = document.getElementById('qty-up')
+											let qtyDown = document.getElementById('qty-down')
+											let numberQty = document.getElementById('numberQty')
+											
+											function onclickUp(){
+												numberQty.value = Number(numberQty.value) + 1
+											}
+											function onclickDown(){
+												numberQty.value = Number(numberQty.value) - 1
+											}
+										</script>
 									</div>
 								</div>
 								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> Ajouter au panier</button>

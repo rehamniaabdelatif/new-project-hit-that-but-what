@@ -15,17 +15,17 @@ module.exports = (req, res, next) => {
         
         jwt.verify(token, process.env.SECRET,async  (err, decoded) => {
             if (err){
-                res.render('login')
+                res.render('signIn-Up')
             } else {
                 try {
                     let products = await Product.find()
                     res.render('index', {products})
                 } catch (error) {
-                    res.render('login')
+                    res.render('signIn-Up')
                 }
             }
         })
     }else{
-        res.render('login')
+        res.render('signIn-Up')
     }
 }
